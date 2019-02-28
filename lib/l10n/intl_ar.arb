@@ -1,0 +1,69 @@
+{
+  "@@last_modified": "2019-02-27T13:52:39.386253",
+  "title": "Hello world App",
+  "@title": {
+    "description": "The application title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "or": "أو",
+  "@or": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "email": "اسم المستخدم",
+  "@email": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "password": "كلمه السر",
+  "@password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "haveAccount": "عندك حساب? التسجيل",
+  "@haveAccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "error": "خطأ",
+  "@error": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ok": "موافق",
+  "@ok": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginWithFB": "الدخول باستخدام facebook",
+  "@loginWithFB": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginWithGoogle": "الدخول باستخدام google",
+  "@loginWithGoogle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "login": "الدخول",
+  "@login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "signup": "تسجيل",
+  "@signup": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orSkip": "أو تخطى",
+  "@orSkip": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "desc": "أحصل على أحسن العروض",
+  "@desc": {
+    "type": "text",
+    "placeholders": {}
+  }
+}

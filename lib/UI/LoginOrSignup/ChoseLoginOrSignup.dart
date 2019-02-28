@@ -5,6 +5,7 @@ import 'package:treva_shop_flutter/UI/BottomNavigationBar.dart';
 import 'package:treva_shop_flutter/UI/HomeUIComponent/Home.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/Login.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/Signup.dart';
+import '../../applocalizations.dart';
 
 
 class ChoseLogin extends StatefulWidget {
@@ -128,7 +129,7 @@ class _ChoseLoginState extends State<ChoseLogin> with TickerProviderStateMixin {
                                 child: Hero(
                                   tag: "Treva",
                                   child: Text(
-                                    "Treva Shop",
+                                    "BOGO",
                                     style: TextStyle(
                                       fontFamily: 'Sans',
                                       fontWeight: FontWeight.w900,
@@ -154,7 +155,7 @@ class _ChoseLoginState extends State<ChoseLogin> with TickerProviderStateMixin {
 
                               /// to set Text "get best product...." (Click to open code)
                               Text(
-                                "Get best product in treva shop",
+                                AppLocalizations.of(context).desc,
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 17.0,
@@ -183,7 +184,7 @@ class _ChoseLoginState extends State<ChoseLogin> with TickerProviderStateMixin {
                                         _Playanimation();
                                         return tapLogin;
                                       },
-                                      child: ButtonCustom(txt: "Signup"),
+                                      child: ButtonCustom(txt: AppLocalizations.of(context).signup),
                                     ),
                                   )
                                 : AnimationSplashSignup(
@@ -213,7 +214,7 @@ class _ChoseLoginState extends State<ChoseLogin> with TickerProviderStateMixin {
                                                     new bottomNavigationBar()));
                                       },
                                       child: Text(
-                                        "OR SKIP",
+                                        AppLocalizations.of(context).orSkip,
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w100,
@@ -249,7 +250,7 @@ class _ChoseLoginState extends State<ChoseLogin> with TickerProviderStateMixin {
                                     _Playanimation();
                                     return tapSignup;
                                   },
-                                  child: ButtonCustom(txt: "Login"),
+                                  child: ButtonCustom(txt: AppLocalizations.of(context).login),
                                 ),
                               )
                             : AnimationSplashLogin(

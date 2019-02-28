@@ -6,6 +6,7 @@ import 'package:treva_shop_flutter/UI/LoginOrSignup/Signup.dart';
 import 'package:http/http.dart' as http;
 import 'package:scoped_model/scoped_model.dart';
 import 'package:treva_shop_flutter/scoped_models/users.dart';
+import '../../applocalizations.dart';
 //import 'package:s';
 
 class loginScreen extends StatefulWidget {
@@ -149,7 +150,7 @@ class _loginScreenState extends State<loginScreen>
                                   padding:
                                       EdgeInsets.symmetric(vertical: 10.0)),
                               Text(
-                                "OR",
+                                AppLocalizations.of(context).or,
                                 style: TextStyle(
                                     fontWeight: FontWeight.w900,
                                     color: Colors.white,
@@ -165,7 +166,7 @@ class _loginScreenState extends State<loginScreen>
                               textFromField(
                                 icon: Icons.email,
                                 password: false,
-                                email: "Email",
+                                email: AppLocalizations.of(context).email,//"Email",
                                 inputType: TextInputType.emailAddress,
                                 controller: _emailController,
                               ),
@@ -176,7 +177,7 @@ class _loginScreenState extends State<loginScreen>
                               textFromField(
                                 icon: Icons.vpn_key,
                                 password: true,
-                                email: "Password",
+                                email: AppLocalizations.of(context).password,//"Password",
                                 inputType: TextInputType.text,
                                 controller: _passController,
                               ),
@@ -191,7 +192,8 @@ class _loginScreenState extends State<loginScreen>
                                                 new Signup()));
                                   },
                                   child: Text(
-                                    "Not Have Acount? Sign Up",
+                                    //"Not Have Acount? Sign Up",
+                                    AppLocalizations.of(context).haveAccount,
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 13.0,
@@ -340,7 +342,8 @@ class buttonCustomFacebook extends StatelessWidget {
             ),
             Padding(padding: EdgeInsets.symmetric(horizontal: 7.0)),
             Text(
-              "Login With Facebook",
+              AppLocalizations.of(context).loginWithFB,
+              //"Login With Facebook",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 15.0,
@@ -378,7 +381,8 @@ class buttonCustomGoogle extends StatelessWidget {
             ),
             Padding(padding: EdgeInsets.symmetric(horizontal: 7.0)),
             Text(
-              "Login With Google",
+              AppLocalizations.of(context).loginWithGoogle,
+              //"Login With Google",
               style: TextStyle(
                   color: Colors.black26,
                   fontSize: 15.0,
@@ -402,7 +406,8 @@ class buttonBlackBottom extends StatelessWidget {
         height: 55.0,
         width: 600.0,
         child: Text(
-          "Login",
+          //"Login",
+          AppLocalizations.of(context).login,
           style: TextStyle(
               color: Colors.white,
               letterSpacing: 0.2,

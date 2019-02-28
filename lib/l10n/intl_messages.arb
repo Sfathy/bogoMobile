@@ -1,0 +1,69 @@
+{
+  "@@last_modified": "2019-02-28T10:36:53.337392",
+  "title": "Hello world App",
+  "@title": {
+    "description": "The application title",
+    "type": "text",
+    "placeholders": {}
+  },
+  "or": "OR",
+  "@or": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "email": "Email",
+  "@email": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "password": "Password",
+  "@password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "haveAccount": "haveAccount",
+  "@haveAccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "error": "Error",
+  "@error": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ok": "Ok",
+  "@ok": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginWithFB": "loginWithFB",
+  "@loginWithFB": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginWithGoogle": "loginWithGoogle",
+  "@loginWithGoogle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "login": "login",
+  "@login": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "signup": "Signup",
+  "@signup": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "orSkip": "OR Skip",
+  "@orSkip": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "desc": "Get best product in treva shop",
+  "@desc": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
