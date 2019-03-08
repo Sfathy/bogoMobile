@@ -65,5 +65,35 @@
   "@desc": {
     "type": "text",
     "placeholders": {}
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "firstName": "First Name",
+  "@firstName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lastName": "Last Name",
+  "@lastName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "mobile": "Mobile",
+  "@mobile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Address": "Address",
+  "@Address": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "haveAccountSignIn": "Have Acount? Sign In",
+  "@haveAccountSignIn": {
+    "type": "text",
+    "placeholders": {}
   }
 }

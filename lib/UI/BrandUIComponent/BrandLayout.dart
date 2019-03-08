@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:treva_shop_flutter/Library/carousel_pro/src/carousel_pro.dart';
 import 'package:treva_shop_flutter/UI/BrandUIComponent/BrandDetail.dart';
 import 'package:treva_shop_flutter/ListItem/BrandDataList.dart';
 import 'package:treva_shop_flutter/UI/HomeUIComponent/Search.dart';
+import 'package:treva_shop_flutter/UI/HomeUIComponent/AppbarGradient.dart';
+
+import '../../applocalizations.dart';
+
 
 class brand extends StatefulWidget {
   @override
@@ -11,19 +16,45 @@ class brand extends StatefulWidget {
 class _brandState extends State<brand> {
   @override
   Widget build(BuildContext context) {
+    var imageSlider = Container(
+      height: 182.0,
+      child: new Carousel(
+        boxFit: BoxFit.cover,
+        dotColor: Color(0xFF6991C7).withOpacity(0.8),
+        dotSize: 5.5,
+        dotSpacing: 16.0,
+        dotBgColor: Colors.transparent,
+        showIndicator: true,
+        overlayShadow: true,
+        overlayShadowColors: Colors.white.withOpacity(0.9),
+        overlayShadowSize: 0.9,
+        images: [
+          AssetImage("assets/img/baner1.png"),
+          AssetImage("assets/img/baner12.png"),
+          AssetImage("assets/img/baner2.png"),
+          AssetImage("assets/img/baner3.png"),
+          AssetImage("assets/img/baner4.png"),
+        ],
+      ),
+    );
     /// Component appbar
     var _appbar = AppBar(
       backgroundColor: Color(0xFFFFFFFF),
       elevation: 0.0,
       title: Padding(
         padding: const EdgeInsets.only(left: 10.0),
-        child: Text(
-          "Category Brand",
-          style: TextStyle(
-              fontFamily: "Gotik",
-              fontSize: 20.0,
-              color: Colors.black54,
-              fontWeight: FontWeight.w700),
+        child: ListView(
+          children: <Widget>[
+            Text(
+              AppLocalizations.of(context).categotyBrand,
+              style: TextStyle(
+                  fontFamily: "Gotik",
+                  fontSize: 20.0,
+                  color: Colors.black54,
+                  fontWeight: FontWeight.w700),
+            ),
+             //imageSlider,
+          ],
         ),
       ),
       actions: <Widget>[
@@ -44,28 +75,65 @@ class _brandState extends State<brand> {
       ],
     );
 
+    /// ImageSlider in header
+    
     return Padding(
       padding: const EdgeInsets.only(top: 8.0),
       child: Scaffold(
         /// Calling variable appbar
-          appBar: _appbar,
-          body: Container(
-            color: Colors.white,
-            child: CustomScrollView(
-              /// Create List Menu
-              slivers: <Widget>[
-                SliverPadding(
-                  padding: EdgeInsets.only(top: 0.0),
-                  sliver: SliverFixedExtentList(
-                      itemExtent: 145.0,
-                      delegate: SliverChildBuilderDelegate(
+        //appBar:  AppbarGradient(),//_appbar,
+        body:
+            //ListView(
+            // children: <Widget>[
+            Container(
+          color: Colors.white,
+          child: //imageSlider
+              //ListView(
+              // children: <Widget>[
+              CustomScrollView(
+                
+            /// Create List Menu
+            slivers: <Widget>[
+              SliverPadding(
+                padding: EdgeInsets.only(top: 0.0),
+                sliver: SliverFixedExtentList(
+                    itemExtent: 100.0,
+                    delegate: SliverChildBuilderDelegate(
+
                         /// Calling itemCard Class for constructor card
-                              (context, index) => itemCard(brandData[index]),
-                          childCount: brandData.length)),
-                ),
-              ],
-            ),
-          )),
+                        (context, index) => AppbarGradient(),
+                        childCount:1)),
+              ),
+              SliverPadding(
+                padding: EdgeInsets.only(top: 3.0),
+                sliver: SliverFixedExtentList(
+                    itemExtent: 145.0, 
+                    delegate: SliverChildBuilderDelegate(
+
+                        /// Calling itemCard Class for constructor card
+                        (context, index) => imageSlider,
+                        childCount:1)),
+              ),
+              //SingleChildScrollView(child: Text('data'),),
+              //Text('add image slider here'),
+              SliverPadding(
+                padding: EdgeInsets.only(top: 0.0),
+                sliver: SliverFixedExtentList(
+                    itemExtent: 145.0,
+                    delegate: SliverChildBuilderDelegate(
+
+                        /// Calling itemCard Class for constructor card
+                        (context, index) => itemCard(brandData[index]),
+                        childCount: brandData.length)),
+              ),
+            ],
+          ),
+          //],
+          //),
+        ),
+        //],
+        //),
+      ),
     );
   }
 }
@@ -80,7 +148,7 @@ class itemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-      const EdgeInsets.only(left: 10.0, right: 10.0, top: 5.0, bottom: 5.0),
+          const EdgeInsets.only(left: 10.0, right: 10.0, top: 5.0, bottom: 5.0),
       child: InkWell(
         onTap: () {
           Navigator.of(context).push(

@@ -78,7 +78,7 @@ class _AppbarGradientState extends State<AppbarGradient> {
                   Padding(
                     padding: EdgeInsets.only(top: 3.0),
                     child: Text(
-                      "Treva Shop",
+                      "BOGO",
                       style: TextStyle(
                           fontFamily: "Popins",
                           color: Colors.black12,

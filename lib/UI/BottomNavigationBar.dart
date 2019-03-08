@@ -15,9 +15,9 @@ class _bottomNavigationBarState extends State<bottomNavigationBar> {
  Widget callPage(int current) {
   switch (current) {
    case 0:
-    return new Menu();
-   case 1:
     return new brand();
+   case 1:
+    return new Menu();
    case 2:
     return new cart();
    case 3:

@@ -20,13 +20,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "Address" : MessageLookupByLibrary.simpleMessage("العنوان"),
+    "confirmPassword" : MessageLookupByLibrary.simpleMessage("تأكيد كلمه السر"),
     "desc" : MessageLookupByLibrary.simpleMessage("أحصل على أحسن العروض"),
     "email" : MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "error" : MessageLookupByLibrary.simpleMessage("خطأ"),
+    "firstName" : MessageLookupByLibrary.simpleMessage("الاسم الاول"),
     "haveAccount" : MessageLookupByLibrary.simpleMessage("عندك حساب? التسجيل"),
+    "haveAccountSignIn" : MessageLookupByLibrary.simpleMessage("لديك حساب ؟ الدخول"),
+    "lastName" : MessageLookupByLibrary.simpleMessage("الاسم الاخير"),
     "login" : MessageLookupByLibrary.simpleMessage("الدخول"),
     "loginWithFB" : MessageLookupByLibrary.simpleMessage("الدخول باستخدام facebook"),
     "loginWithGoogle" : MessageLookupByLibrary.simpleMessage("الدخول باستخدام google"),
+    "mobile" : MessageLookupByLibrary.simpleMessage("المحمول"),
     "ok" : MessageLookupByLibrary.simpleMessage("موافق"),
     "or" : MessageLookupByLibrary.simpleMessage("أو"),
     "orSkip" : MessageLookupByLibrary.simpleMessage("أو تخطى"),

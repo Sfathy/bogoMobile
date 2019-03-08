@@ -576,16 +576,16 @@ class _MenuState extends State<Menu> with TickerProviderStateMixin {
                 imageSlider,
 
                 /// Call var categoryIcon
-                categoryIcon,
+              //  categoryIcon,
                 Padding(
                   padding: EdgeInsets.only(top: 10.0),
                 ),
 
                 /// Call var PromoHorizontalList
-                PromoHorizontalList,
+               // PromoHorizontalList,
 
                 /// Call var a FlashSell, i am sorry Typo :v
-                FlashSell,
+               /* FlashSell,
                 Padding(
                   padding: EdgeInsets.only(top: 10.0),
                 ),
@@ -593,9 +593,9 @@ class _MenuState extends State<Menu> with TickerProviderStateMixin {
                 Padding(
                   padding: EdgeInsets.only(bottom: 10.0),
                 ),
-
+*/  
                 /// Call a Grid variable, this is item list in Recomended item
-                Grid,
+             //   Grid,
               ],
             ),
           ),

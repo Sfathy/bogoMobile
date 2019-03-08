@@ -378,6 +378,7 @@ class _brandDetailState extends State<brandDetail> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
+                          Text('add slider here'),
                           Container(
                             height: mediaQueryData.size.height / 3.5,
                             width: 200.0,

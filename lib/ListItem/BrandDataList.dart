@@ -33,7 +33,7 @@ class items {
 
 List<Brand> brandData = [
   const Brand(
-      name: "Nike Sport",
+      name: "Active Deals",
       id: "1",
       img: "assets/imgBrand/nikeHeader.png",
       desc:
@@ -46,7 +46,7 @@ List<Brand> brandData = [
           itemRatting: "4.5",
           itemSale: "200 Sale")),
   const Brand(
-      name: "Apple Tech",
+      name: "BOGO Coupon",
       id: "2",
       img: "assets/imgBrand/appleHeader.png",
       desc:
@@ -59,7 +59,7 @@ List<Brand> brandData = [
           itemRatting: "4.5",
           itemSale: "250 Sale")),
   const Brand(
-      name: "Fendi Fashion",
+      name: "Brand Special Day",
       id: "3",
       img: "assets/imgBrand/fendiHeader.png",
       desc:
@@ -72,7 +72,7 @@ List<Brand> brandData = [
           itemRatting: "4.5",
           itemSale: "200 Sale")),
   const Brand(
-      name: "Gucci Fashion",
+      name: "Events",
       id: "4",
       img: "assets/imgBrand/gucciHeader.png",
       desc:
@@ -85,7 +85,7 @@ List<Brand> brandData = [
           itemRatting: "4.5",
           itemSale: "200 Sale")),
   const Brand(
-      name: "Samsung Tech",
+      name: "BOGO Book",
       id: "5",
       img: "assets/imgBrand/samsungHeader.png",
       desc:
@@ -97,7 +97,7 @@ List<Brand> brandData = [
           itemPrice: "\$ 800",
           itemRatting: "4.5",
           itemSale: "200 Sale")),
-  const Brand(
+  /*const Brand(
       name: "Sony Tech",
       id: "6",
       img: "assets/imgBrand/sonyHeader.png",
@@ -109,5 +109,5 @@ List<Brand> brandData = [
           itemName: "SmartWarch Sonny",
           itemPrice: "\$ 100",
           itemRatting: "4.5",
-          itemSale: "200 Sale")),
+          itemSale: "200 Sale")),*/
 ];

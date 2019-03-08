@@ -65,5 +65,35 @@
   "@desc": {
     "type": "text",
     "placeholders": {}
+  },
+  "confirmPassword": "تأكيد كلمه السر",
+  "@confirmPassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "firstName": "الاسم الاول",
+  "@firstName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lastName": "الاسم الاخير",
+  "@lastName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "mobile": "المحمول",
+  "@mobile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Address": "العنوان",
+  "@Address": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "haveAccountSignIn": "لديك حساب ؟ الدخول",
+  "@haveAccountSignIn": {
+    "type": "text",
+    "placeholders": {}
   }
 }

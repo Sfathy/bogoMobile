@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2019-02-28T10:36:53.337392",
+  "@@last_modified": "2019-02-28T11:11:52.368384",
   "title": "Hello world App",
   "@title": {
     "description": "The application title",
@@ -63,6 +63,36 @@
   },
   "desc": "Get best product in treva shop",
   "@desc": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "firstName": "First Name",
+  "@firstName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lastName": "Last Name",
+  "@lastName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "mobile": "Mobile",
+  "@mobile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "Address": "Address",
+  "@Address": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "haveAccountSignIn": "Have Acount? Sign In",
+  "@haveAccountSignIn": {
     "type": "text",
     "placeholders": {}
   }

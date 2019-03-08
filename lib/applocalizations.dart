@@ -66,6 +66,36 @@ class AppLocalizations {
     String get desc {
     return Intl.message('Get best product in treva shop', name: 'desc');
   } 
+  String get confirmPassword {
+    return Intl.message('Confirm Password', name: 'confirmPassword');
+  }
+  //First Name
+  String get firstName {
+    return Intl.message('First Name', name: 'firstName');
+  }
+  //Last Name
+  String get lastName {
+    return Intl.message('Last Name', name: 'lastName');
+  }
+  //"Mobile"
+  String get mobile {
+    return Intl.message('Mobile', name: 'mobile');
+  }
+  //Address
+  String get Address {
+    return Intl.message('Address', name: 'Address');
+  }
+  //Have Acount? Sign In
+  String get haveAccountSignIn {
+    return Intl.message('Have Acount? Sign In', name: 'haveAccountSignIn');
+  }
+  //"Category Brand"
+   String get categotyBrand {
+    return Intl.message('Category Brand', name: 'categotyBrand');
+  }
+  
+  
+  
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

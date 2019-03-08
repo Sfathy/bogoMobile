@@ -7,6 +7,7 @@ import 'package:treva_shop_flutter/UI/BottomNavigationBar.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/Login.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/LoginAnimation.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/Signup.dart';
+import '../../applocalizations.dart';
 
 class Signup extends StatefulWidget {
   @override
@@ -151,7 +152,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                                   textFromField(
                                     //  icon: Icons.email,
                                     password: false,
-                                    email: "Email",
+                                    email: AppLocalizations.of(context).email,
                                     inputType: TextInputType.emailAddress,
                                     controller: _emailController,
                                   ),
@@ -163,7 +164,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                                   textFromField(
                                     //  icon: Icons.vpn_key,
                                     password: true,
-                                    email: "Password",
+                                    email: AppLocalizations.of(context).password,
                                     inputType: TextInputType.text,
                                     controller: _passwordController,
                                   ),
@@ -176,7 +177,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                                   textFromField(
                                     //  icon: Icons.vpn_key,
                                     password: true,
-                                    email: "Confirm Password",
+                                    email: AppLocalizations.of(context).confirmPassword,
                                     inputType: TextInputType.text,
                                   ),
 
@@ -188,7 +189,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                                   textFromField(
                                     // icon: Icons.vpn_key,
                                     password: false,
-                                    email: "First Name",
+                                    email: AppLocalizations.of(context).firstName,
                                     inputType: TextInputType.text,
                                     controller: _firstNameController,
                                   ),
@@ -200,7 +201,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                                   textFromField(
                                     // icon: Icons.vpn_key,
                                     password: false,
-                                    email: "Last Name",
+                                    email: AppLocalizations.of(context).lastName,
                                     inputType: TextInputType.text,
                                     controller: _secondNameController,
                                   ),
@@ -212,7 +213,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                                   textFromField(
                                     // icon: Icons.vpn_key,
                                     password: false,
-                                    email: "Mobile",
+                                    email: AppLocalizations.of(context).mobile,
                                     inputType: TextInputType.text,
                                     controller: _mobileController,
                                   ),
@@ -224,7 +225,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                                   textFromField(
                                     // icon: Icons.vpn_key,
                                     password: false,
-                                    email: "Address",
+                                    email: AppLocalizations.of(context).Address,
                                     inputType: TextInputType.text,
                                     controller: _addressController,
                                   ),
@@ -240,7 +241,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                                                         new loginScreen()));
                                       },
                                       child: Text(
-                                        " Have Acount? Sign In",
+                                        AppLocalizations.of(context).haveAccountSignIn,
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 13.0,
@@ -383,7 +384,7 @@ class buttonBlackBottom extends StatelessWidget {
         height: 55.0,
         width: 600.0,
         child: Text(
-          "Sign Up",
+          AppLocalizations.of(context).signup,
           style: TextStyle(
               color: Colors.white,
               letterSpacing: 0.2,
