@@ -24,7 +24,7 @@ MessageLookupByLibrary _findExact(localeName) {
     case 'ar':
       return messages_ar.messages;
     case 'en':
-      return messages_ar.messages;
+      return messages_en.messages;
     default:
       return null;
   }

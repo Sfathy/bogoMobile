@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/Models/page_view_model.dart';
 import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/intro_views_flutter.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/ChoseLoginOrSignup.dart';
+import 'package:scoped_model/scoped_model.dart';
+import '../scoped_models/users.dart';
 
 class onBoarding extends StatefulWidget {
+  final UsersModel user;
+  onBoarding(this.user);
   @override
   _onBoardingState createState() => _onBoardingState();
 }
@@ -92,7 +96,7 @@ class _onBoardingState extends State<onBoarding> {
       skipText: Text("SKIP",style: _fontDescriptionStyle.copyWith(color: Colors.deepPurpleAccent,fontWeight: FontWeight.w800,letterSpacing: 1.0),),
       doneText: Text("DONE",style: _fontDescriptionStyle.copyWith(color: Colors.deepPurpleAccent,fontWeight: FontWeight.w800,letterSpacing: 1.0),),
       onTapDoneButton: (){
-        Navigator.of(context).pushReplacement(PageRouteBuilder(pageBuilder: (_,__,___)=> new ChoseLogin(),
+        Navigator.of(context).pushReplacement(PageRouteBuilder(pageBuilder: (_,__,___)=> new ChoseLogin(widget.user),
         transitionsBuilder: (_,Animation<double> animation,__,Widget widget){
           return Opacity(
             opacity: animation.value,

@@ -11,10 +11,9 @@ class AppbarGradient extends StatefulWidget {
 class _AppbarGradientState extends State<AppbarGradient> {
   String CountNotice = "4";
 
-    /// Build Appbar in layout home
+  /// Build Appbar in layout home
   @override
   Widget build(BuildContext context) {
-
     /// Create responsive height and padding
     final MediaQueryData media = MediaQuery.of(context);
     final double statusBarHeight = MediaQuery.of(context).padding.top;
@@ -24,7 +23,8 @@ class _AppbarGradientState extends State<AppbarGradient> {
       padding: EdgeInsets.only(top: statusBarHeight),
       height: 58.0 + statusBarHeight,
       decoration: BoxDecoration(
-        /// gradient in appbar
+
+          /// gradient in appbar
           gradient: LinearGradient(
               colors: [
                 const Color(0xFFA3BDED),
@@ -38,13 +38,35 @@ class _AppbarGradientState extends State<AppbarGradient> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
+          //BOGO icon
+          Image.asset(
+            'assets/img/Logo.png',
+            width: 35.0,
+            height: 35.0,
+          ),
+          //hi userName
+          Text(
+            'Sherif Fathy',
+            style: TextStyle(
+                fontWeight: FontWeight.w900,
+                letterSpacing: 0.6,
+                color: Colors.white,
+                fontFamily: "Sans",
+                fontSize: 20.0),
+          ),
+          SizedBox(
+            width: 35.0,
+          ),
+
           /// if user click shape white in appbar navigate to search layout
           InkWell(
             onTap: () {
               Navigator.of(context).push(PageRouteBuilder(
                   pageBuilder: (_, __, ___) => searchAppbar(),
+
                   /// transtation duration in animation
                   transitionDuration: Duration(milliseconds: 750),
+
                   /// animation route to search layout
                   transitionsBuilder:
                       (_, Animation<double> animation, __, Widget child) {
@@ -54,8 +76,12 @@ class _AppbarGradientState extends State<AppbarGradient> {
                     );
                   }));
             },
+
             /// Create shape background white in appbar (background treva shop text)
-            child: Container(
+            child: Image.asset(
+              "assets/img/search2.png",
+              height: 22.0,
+            ), /*Container(
               margin: EdgeInsets.only(left: media.padding.left + 15),
               height: 37.0,
               width: 222.0,
@@ -89,8 +115,9 @@ class _AppbarGradientState extends State<AppbarGradient> {
                   ),
                 ],
               ),
-            ),
+            ),*/
           ),
+
           /// Icon chat (if user click navigate to chat layout)
           InkWell(
               onTap: () {
@@ -101,6 +128,7 @@ class _AppbarGradientState extends State<AppbarGradient> {
                 "assets/img/chat.png",
                 height: media.devicePixelRatio + 20.0,
               )),
+
           /// Icon notification (if user click navigate to notification layout)
           InkWell(
             onTap: () {
@@ -124,7 +152,6 @@ class _AppbarGradientState extends State<AppbarGradient> {
                 )
               ],
             ),
-
           ),
         ],
       ),

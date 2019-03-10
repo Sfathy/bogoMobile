@@ -3,19 +3,24 @@ import 'package:treva_shop_flutter/UI/BrandUIComponent/BrandLayout.dart';
 import 'package:treva_shop_flutter/UI/CartUIComponent/CartLayout.dart';
 import 'package:treva_shop_flutter/UI/HomeUIComponent/Home.dart';
 import 'package:treva_shop_flutter/UI/AcountUIComponent/Profile.dart';
+import 'package:scoped_model/scoped_model.dart';
+import '../scoped_models/users.dart';
 
 class bottomNavigationBar extends StatefulWidget {
+  //final UsersModel user;
+  bottomNavigationBar();
  @override
  _bottomNavigationBarState createState() => _bottomNavigationBarState();
 }
 
 class _bottomNavigationBarState extends State<bottomNavigationBar> {
+  UsersModel user = new UsersModel();
  int currentIndex = 0;
  /// Set a type current number a layout class
  Widget callPage(int current) {
   switch (current) {
    case 0:
-    return new brand();
+    return new brand(user);
    case 1:
     return new Menu();
    case 2:

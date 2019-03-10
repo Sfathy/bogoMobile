@@ -5,7 +5,7 @@ import 'package:treva_shop_flutter/ListItem/BrandDataList.dart';
 class privatemessage extends StatefulWidget {
 
   /// Declare Brand class and Get Data Name for Appbar (BrandDataList.dart)
-  final Brand brand;
+  final Brand2 brand;
   privatemessage(this.brand);
 
   @override
@@ -22,7 +22,7 @@ class _privatemessageState extends State<privatemessage>
   bool _isWriting = false;
 
   /// Declare Brand class
-  final Brand brand;
+  final Brand2 brand;
   _privatemessageState(this.brand);
 
   @override

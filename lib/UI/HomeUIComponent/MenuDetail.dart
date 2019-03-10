@@ -189,7 +189,7 @@ class _menuDetailState extends State<menuDetail> {
               /// Card to set card loading animation
               ///
               ///
-              child: loadImage? _loadingImageAnimation(context):
+              child: loadImage? loadingImageAnimation(context):
               ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index)=>menuItemCard(itemDiscount[index]),
@@ -227,7 +227,7 @@ class _menuDetailState extends State<menuDetail> {
               child: Container(
                 margin: EdgeInsets.only(right: 10.0),
                 height: 300.0,
-                child: loadImage? _loadingImageAnimation(context):
+                child: loadImage? loadingImageAnimation(context):
                 ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index)=>menuItemCard(itemPopularData[index]),
@@ -273,7 +273,7 @@ class _menuDetailState extends State<menuDetail> {
                 /// Card to set card loading animation
                 ///
                 ///
-                child: loadImage? _loadingImageAnimation(context):
+                child: loadImage? loadingImageAnimation(context):
                 ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index)=>menuItemCard(newItems[index]),
@@ -632,7 +632,7 @@ class loadingMenuItemCard extends StatelessWidget {
 /// Calling imageLoading animation for set a grid layout
 ///
 ///
-Widget _loadingImageAnimation(BuildContext context){
+Widget loadingImageAnimation(BuildContext context){
   return ListView.builder(
     scrollDirection: Axis.horizontal,
     itemBuilder: (BuildContext context, int index)=>loadingMenuItemCard(),

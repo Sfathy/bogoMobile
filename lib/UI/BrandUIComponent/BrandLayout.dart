@@ -1,19 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
 import 'package:treva_shop_flutter/Library/carousel_pro/src/carousel_pro.dart';
 import 'package:treva_shop_flutter/UI/BrandUIComponent/BrandDetail.dart';
 import 'package:treva_shop_flutter/ListItem/BrandDataList.dart';
 import 'package:treva_shop_flutter/UI/HomeUIComponent/Search.dart';
 import 'package:treva_shop_flutter/UI/HomeUIComponent/AppbarGradient.dart';
-
+import 'package:treva_shop_flutter/scoped_models/users.dart';
+import '../../scoped_models/users.dart';
 import '../../applocalizations.dart';
 
-
 class brand extends StatefulWidget {
+  final UsersModel user;
+  brand(this.user);
   @override
   _brandState createState() => _brandState();
 }
 
 class _brandState extends State<brand> {
+  void initState() {
+    super.initState();
+    //print('Call get Main');
+    //getMainCat();
+  }
+
   @override
   Widget build(BuildContext context) {
     var imageSlider = Container(
@@ -37,6 +46,7 @@ class _brandState extends State<brand> {
         ],
       ),
     );
+
     /// Component appbar
     var _appbar = AppBar(
       backgroundColor: Color(0xFFFFFFFF),
@@ -53,7 +63,7 @@ class _brandState extends State<brand> {
                   color: Colors.black54,
                   fontWeight: FontWeight.w700),
             ),
-             //imageSlider,
+            //imageSlider,
           ],
         ),
       ),
@@ -76,7 +86,7 @@ class _brandState extends State<brand> {
     );
 
     /// ImageSlider in header
-    
+
     return Padding(
       padding: const EdgeInsets.only(top: 8.0),
       child: Scaffold(
@@ -85,52 +95,57 @@ class _brandState extends State<brand> {
         body:
             //ListView(
             // children: <Widget>[
-            Container(
-          color: Colors.white,
-          child: //imageSlider
-              //ListView(
-              // children: <Widget>[
-              CustomScrollView(
-                
-            /// Create List Menu
-            slivers: <Widget>[
-              SliverPadding(
-                padding: EdgeInsets.only(top: 0.0),
-                sliver: SliverFixedExtentList(
-                    itemExtent: 100.0,
-                    delegate: SliverChildBuilderDelegate(
+            ScopedModelDescendant<UsersModel>(builder:
+                (BuildContext context, Widget child, UsersModel model) {
+          return Container(
+            color: Colors.white,
+            child: //imageSlider
+                //ListView(
+                // children: <Widget>[
+                CustomScrollView(
+              /// Create List Menu
+              slivers: <Widget>[
+                SliverPadding(
+                  padding: EdgeInsets.only(top: 0.0),
+                  sliver: SliverFixedExtentList(
+                      itemExtent: 100.0,
+                      delegate: SliverChildBuilderDelegate(
 
-                        /// Calling itemCard Class for constructor card
-                        (context, index) => AppbarGradient(),
-                        childCount:1)),
-              ),
-              SliverPadding(
-                padding: EdgeInsets.only(top: 3.0),
-                sliver: SliverFixedExtentList(
-                    itemExtent: 145.0, 
-                    delegate: SliverChildBuilderDelegate(
+                          /// Calling itemCard Class for constructor card
+                          (context, index) => AppbarGradient(),
+                          childCount: 1)),
+                ),
+                SliverPadding(
+                  padding: EdgeInsets.only(top: 3.0),
+                  sliver: SliverFixedExtentList(
+                      itemExtent: 145.0,
+                      delegate: SliverChildBuilderDelegate(
 
-                        /// Calling itemCard Class for constructor card
-                        (context, index) => imageSlider,
-                        childCount:1)),
-              ),
-              //SingleChildScrollView(child: Text('data'),),
-              //Text('add image slider here'),
-              SliverPadding(
-                padding: EdgeInsets.only(top: 0.0),
-                sliver: SliverFixedExtentList(
-                    itemExtent: 145.0,
-                    delegate: SliverChildBuilderDelegate(
+                          /// Calling itemCard Class for constructor card
+                          (context, index) => imageSlider,
+                          childCount: 1)),
+                ),
+                //SingleChildScrollView(child: Text('data'),),
+                //Text('add image slider here'),
 
-                        /// Calling itemCard Class for constructor card
-                        (context, index) => itemCard(brandData[index]),
-                        childCount: brandData.length)),
-              ),
-            ],
-          ),
-          //],
-          //),
-        ),
+                SliverPadding(
+                  padding: EdgeInsets.only(top: 0.0),
+                  sliver: SliverFixedExtentList(
+                      itemExtent: 145.0,
+                      delegate: 
+                          SliverChildBuilderDelegate(
+
+                              /// Calling itemCard Class for constructor card
+                              (context, index) =>
+                                  itemCard(brandData[index]),
+                              childCount: brandData.length)),
+                ),
+              ],
+            ),
+            //],
+            //),
+          );
+        }),
         //],
         //),
       ),
@@ -141,7 +156,7 @@ class _brandState extends State<brand> {
 /// Constructor for itemCard for List Menu
 class itemCard extends StatelessWidget {
   /// Declaration and Get data from BrandDataList.dart
-  final Brand brand;
+  final Brand2 brand;
   itemCard(this.brand);
 
   @override

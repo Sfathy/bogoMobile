@@ -4,11 +4,12 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
 import '../models/categoty.dart';
+import 'package:treva_shop_flutter/ListItem/BrandDataList.dart';
 //import 'package:shared_preferences/shared_preferences.dart';
 
 class UsersModel extends Model {
-final String baseURL = 'http://bogocustomer.dragonssolution.com/api/';
-//final String baseURL = 'http://192.168.8.100:52994/api/';
+//final String baseURL = 'http://bogocustomer.dragonssolution.com/api/';
+final String baseURL = 'http://192.168.1.137:52994/api/';
   User _authenticatedUser;
   List<Category> _catlist = new List<Category>();
   List<Coupon> _couponList = new List<Coupon>();
@@ -67,7 +68,42 @@ final String baseURL = 'http://bogocustomer.dragonssolution.com/api/';
     }
     return _platinumList;
   }
-
+List<Brand2> _brandData;
+List<Brand2> get brandData2
+{
+  if (_brandData == null || _brandData.length == 0) {
+      //get coupon list from the server
+      getMainCat();
+      notifyListeners();
+    }
+    return _brandData;
+}
+void getMainCat() async {
+  //http.get('http://10.41.9.107:52994/api/Category/getMaincat');
+  http.Response response =
+      await http.get(baseURL + 'Category/getMaincat');
+  List res;
+  var data;
+  print(response.body);
+  if (response.statusCode == 200) {
+    data = json.decode(response.body);
+    _brandData = new List<Brand2>();
+    for (var i = 0; i < data.length; i++) {
+      _brandData.add(new Brand2(
+          desc: data[i]['desc'],
+          name: data[i]['name'],
+          id: data[i]['id'].toString(),
+          img: data[i]['img'],
+          item: items(
+              itemImg: "assets/imgBrand/brandNike.jpg",
+              itemId: "1",
+              itemName: "Nike Sport Shoes Running Man Blue Black",
+              itemPrice: "\$ 100",
+              itemRatting: "4.5",
+              itemSale: "200 Sale")));
+    }
+    }
+  }
   void getPlatinumList() async {
     http.Response response = await http.get(
         baseURL + 'Customer/getPlatinum/' + _authenticatedUser.id.toString());

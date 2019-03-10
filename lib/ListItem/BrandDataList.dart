@@ -1,11 +1,15 @@
-class Brand {
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'dart:async';
+
+class Brand2 {
   final String id;
   final String name;
   final String img;
   final String desc;
   final items item;
 
-  const Brand({
+  const Brand2({
     this.img,
     this.id,
     this.name,
@@ -24,20 +28,22 @@ class items {
 
   const items(
       {this.itemName,
-        this.itemPrice,
-        this.itemRatting,
-        this.itemSale,
-        this.itemId,
-        this.itemImg});
+      this.itemPrice,
+      this.itemRatting,
+      this.itemSale,
+      this.itemId,
+      this.itemImg});
 }
 
-List<Brand> brandData = [
-  const Brand(
+
+
+List<Brand2> brandData = [
+  const Brand2(
       name: "Active Deals",
       id: "1",
       img: "assets/imgBrand/nikeHeader.png",
       desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       item: items(
           itemImg: "assets/imgBrand/brandNike.jpg",
           itemId: "1",
@@ -45,12 +51,12 @@ List<Brand> brandData = [
           itemPrice: "\$ 100",
           itemRatting: "4.5",
           itemSale: "200 Sale")),
-  const Brand(
+  const Brand2(
       name: "BOGO Coupon",
       id: "2",
       img: "assets/imgBrand/appleHeader.png",
       desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       item: items(
           itemImg: "assets/imgBrand/brandApple.jpg",
           itemId: "1",
@@ -58,12 +64,12 @@ List<Brand> brandData = [
           itemPrice: "\$ 1500",
           itemRatting: "4.5",
           itemSale: "250 Sale")),
-  const Brand(
+  const Brand2(
       name: "Brand Special Day",
       id: "3",
       img: "assets/imgBrand/fendiHeader.png",
       desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       item: items(
           itemImg: "assets/imgItem/fashion1.jpg",
           itemId: "1",
@@ -71,12 +77,12 @@ List<Brand> brandData = [
           itemPrice: "\$ 250",
           itemRatting: "4.5",
           itemSale: "200 Sale")),
-  const Brand(
+  const Brand2(
       name: "Events",
       id: "4",
       img: "assets/imgBrand/gucciHeader.png",
       desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       item: items(
           itemImg: "assets/imgItem/flashsale2.jpg",
           itemId: "1",
@@ -84,12 +90,12 @@ List<Brand> brandData = [
           itemPrice: "\$ 100",
           itemRatting: "4.5",
           itemSale: "200 Sale")),
-  const Brand(
+  const Brand2(
       name: "BOGO Book",
       id: "5",
       img: "assets/imgBrand/samsungHeader.png",
       desc:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       item: items(
           itemImg: "assets/imgPromo/imgPromo2.jpg",
           itemId: "1",

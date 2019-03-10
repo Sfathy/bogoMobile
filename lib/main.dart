@@ -30,7 +30,7 @@ class MyApp extends StatefulWidget {
 class _myAppState extends State<MyApp> {
   @override
   void initState() {
-    _appLocalizationsDelegate = new AppLocalizationsDelegate(new Locale("ar"));
+    _appLocalizationsDelegate = new AppLocalizationsDelegate(new Locale("en"));
     helper.onLocaleChanged = onLocaleChange;
     super.initState();
   }
@@ -81,7 +81,7 @@ class _myAppState extends State<MyApp> {
         /// Move splash screen to ChoseLogin Layout
         /// Routes
         routes: <String, WidgetBuilder>{
-          "login": (BuildContext context) => new onBoarding()
+          "login": (BuildContext context) => new onBoarding(model)
         },
       ),
     );

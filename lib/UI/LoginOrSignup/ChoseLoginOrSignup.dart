@@ -6,9 +6,12 @@ import 'package:treva_shop_flutter/UI/HomeUIComponent/Home.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/Login.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/Signup.dart';
 import '../../applocalizations.dart';
-
+import 'package:scoped_model/scoped_model.dart';
+import '../../scoped_models/users.dart';
 
 class ChoseLogin extends StatefulWidget {
+  final UsersModel user;
+  ChoseLogin(this.user);
   @override
   _ChoseLoginState createState() => _ChoseLoginState();
 }

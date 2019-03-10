@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/ListItem/BrandDataList.dart';
+import 'package:treva_shop_flutter/ListItem/MenuItem.dart';
+//import 'package:treva_shop_flutter/ListItem/CategoryItem.dart';
 import 'package:treva_shop_flutter/UI/BrandUIComponent/Chat.dart';
 import 'package:treva_shop_flutter/UI/HomeUIComponent/Home.dart';
+import 'package:treva_shop_flutter/UI/HomeUIComponent/MenuDetail.dart';
+import 'package:treva_shop_flutter/UI/HomeUIComponent/PromotionDetail.dart';
 
 class brandDetail extends StatefulWidget {
   @override
   /// Get data from BrandDataList.dart (List Item)
   /// Declare class
-  final Brand brand;
+  final Brand2 brand;
   brandDetail(this.brand);
   _brandDetailState createState() => _brandDetailState(brand);
 }
@@ -20,7 +24,7 @@ class _brandDetailState extends State<brandDetail> {
 
   /// Get data from BrandDataList.dart (List Item)
   /// Declare class
-  final Brand brand;
+  final Brand2 brand;
   _brandDetailState(this.brand);
   String notif = "Notifications";
 
@@ -39,6 +43,25 @@ class _brandDetailState extends State<brandDetail> {
       color: Colors.black45,
       fontWeight: FontWeight.w400,
       fontSize: 16.0);
+///
+  /// check the condition is right or wrong for image loaded or no
+  ///
+  bool loadImage = true;
+
+  /// Custom text
+  static var _customTextStyleBlack = TextStyle(
+      fontFamily: "Gotik",
+      color: Colors.black,
+      fontWeight: FontWeight.w700,
+      fontSize: 15.0);
+
+  /// Custom Text Blue Color
+  static var _customTextStyleBlue = TextStyle(
+      fontFamily: "Gotik",
+      color: Color(0xFF6991C7),
+      fontWeight: FontWeight.w700,
+      fontSize: 15.0);
+
 
   /// Create Modal BottomSheet (SortBy)
   void _modalBottomSheetSort() {
@@ -193,6 +216,180 @@ class _brandDetailState extends State<brandDetail> {
       ),
     );
 
+
+    /// Item first above "Week Promotion" with image Promotion
+    var _promoHorizontalList = Container(
+      color: Colors.white,
+      height: 215.0,
+      padding: EdgeInsets.only(bottom: 40.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+              padding: EdgeInsets.only(left: 20.0, top: 10.0, bottom: 3.0),
+              child: Text("Week Promotion", style: _customTextStyleBlack)),
+          Expanded(
+            child: ListView(
+              shrinkWrap: true,
+              padding: EdgeInsets.only(top: 10.0),
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                /// Call itemPopular Class
+                Padding(padding: EdgeInsets.only(left: 20.0)),
+                itemPopular(
+                  image: "assets/imgCamera/CameraDigital.png",
+                  title: "Camera \n Digital",
+                ),
+                Padding(padding: EdgeInsets.only(left: 10.0)),
+                itemPopular(
+                  image: "assets/imgCamera/CompactCamera.png",
+                  title: "Compact \n Camera",
+                ),
+                Padding(padding: EdgeInsets.only(left: 10.0)),
+                itemPopular(
+                  image: "assets/imgCamera/ActionCamera.png",
+                  title: "Action \n Camera",
+                ),
+                Padding(padding: EdgeInsets.only(left: 5.0)),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+
+   
+    /// Item Discount
+    var _itemDiscount = Container(
+      child: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 30.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  "Discount",
+                  style: _customTextStyleBlack,
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(PageRouteBuilder(
+                        pageBuilder: (_, __, ___) => new promoDetail()));
+                  },
+                  child: Text("See More", style: _customTextStyleBlue),
+                ),
+              ],
+            ),
+          ),
+          SingleChildScrollView(
+            child: Container(
+              margin: EdgeInsets.only(right: 10.0),
+              height: 300.0,
+              ///
+              ///
+              /// check the condition if image data from server firebase loaded or no
+              /// if image true (image still downloading from server)
+              /// Card to set card loading animation
+              ///
+              ///
+              child: loadImage? loadingImageAnimation(context):
+              ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (BuildContext context, int index)=>menuItemCard(itemDiscount[index]),
+                itemCount: itemDiscount.length,
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+
+    /// Item Popular
+    var _itemPopular = Padding(
+      padding: const EdgeInsets.only(top: 30.0),
+      child: Container(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(right: 20.0, left: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    "Item Popular",
+                    style: _customTextStyleBlack,
+                  ),
+                  InkWell(
+                    onTap: null,
+                    child: Text("See More", style: _customTextStyleBlue),
+                  ),
+                ],
+              ),
+            ),
+            SingleChildScrollView(
+              child: Container(
+                margin: EdgeInsets.only(right: 10.0),
+                height: 300.0,
+                child: loadImage? loadingImageAnimation(context):
+                ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int index)=>menuItemCard(itemPopularData[index]),
+                  itemCount: itemDiscount.length,
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+
+    /// Item New
+    var _itemNew = Padding(
+      padding: const EdgeInsets.only(top: 30.0),
+      child: Container(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(right: 20.0, left: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    "New Items",
+                    style: _customTextStyleBlack,
+                  ),
+                  InkWell(
+                    onTap: null,
+                    child: Text("See More", style: _customTextStyleBlue),
+                  ),
+                ],
+              ),
+            ),
+            SingleChildScrollView(
+              child: Container(
+                margin: EdgeInsets.only(right: 10.0, bottom: 15.0),
+                height: 300.0,
+                ///
+                ///
+                /// check the condition if image data from server firebase loaded or no
+                /// if image true (image still downloading from server)
+                /// Card to set card loading animation
+                ///
+                ///
+                child: loadImage? loadingImageAnimation(context):
+                ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int index)=>menuItemCard(newItems[index]),
+                  itemCount: itemDiscount.length,
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+
     return Scaffold(
       key: _key,
       body: CustomScrollView(
@@ -229,7 +426,12 @@ class _brandDetailState extends State<brandDetail> {
                 color: Colors.white,
                 child: Column(
                   children: <Widget>[
-                    Padding(
+                       _promoHorizontalList,
+             // _subCategory,
+              _itemDiscount,
+             // _itemPopular,
+             // _itemNew
+                   /* Padding(
                       padding: EdgeInsets.only(
                           top: 0.0, left: 0.0, right: 0.0, bottom: 0.0),
                       child: Container(
@@ -240,7 +442,8 @@ class _brandDetailState extends State<brandDetail> {
                         ),
                         child: Column(
                           children: <Widget>[
-                            Padding(
+                           
+                           Padding(
                               padding: const EdgeInsets.only(
                                   top: 30.0, left: 20.0, right: 20.0),
                               child: Text(
@@ -349,7 +552,7 @@ class _brandDetailState extends State<brandDetail> {
                           ),
                         ],
                       ),
-                    ),
+                    ),*/
                   ],
                 ),
               ),
@@ -357,7 +560,7 @@ class _brandDetailState extends State<brandDetail> {
           ),
 
           /// Create Grid Item
-          SliverGrid(
+         /* SliverGrid(
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
                 return Container(
@@ -467,7 +670,7 @@ class _brandDetailState extends State<brandDetail> {
               crossAxisSpacing: 7.0,
               childAspectRatio: 0.605,
             ),
-          ),
+          ),*/
         ],
       ),
     );
